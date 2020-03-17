@@ -20,3 +20,6 @@ if [ "$DUMP_TRAFFIC" == "y" ]; then
 else
       openssl s_client -connect $TARGET -state;
 fi
+
+printf "\nCertificate decoded:\n"
+openssl s_client -connect $TARGET | openssl x509 -text
